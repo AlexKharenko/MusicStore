@@ -25,6 +25,7 @@ const assign = multer.diskStorage({
 
 const upload = multer({
     storage:assign,
+    dest: './public/uploads',
     fileFilter: (req, file, cb) => {
         const ext = path.extname(file.originalname);
         if(file.fieldname === "cover"){
